@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace BrValidator\ValueObjects;
 
+use BrValidator\Contracts\DocumentValidator;
+use BrValidator\Contracts\DocumentValueObject;
 use BrValidator\Documents\CNPJ as CNPJValidator;
 use BrValidator\Enums\DocumentType;
 use BrValidator\Utils\DocumentHelper;
-use BrValidator\Contracts\DocumentValueObject;
-use BrValidator\Contracts\DocumentValidator;
 
 class CNPJValueObject implements DocumentValueObject
 {
