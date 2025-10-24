@@ -1,0 +1,45 @@
+<?php
+
+declare(strict_types=1);
+
+namespace BrValidator\ValueObjects;
+
+use BrValidator\Documents\CPF as CPFValidator;
+use BrValidator\Enums\DocumentType;
+use BrValidator\Utils\DocumentHelper;
+use BrValidator\Contracts\DocumentValueObject;
+use BrValidator\Contracts\DocumentValidator;
+
+class CPFValueObject implements DocumentValueObject
+{
+    protected DocumentValidator $validator;
+
+    public function __construct(protected string $document)
+    {
+        $this->validator = new CPFValidator();
+
+        if (!$this->validator->isValid($document)) {
+            throw new \InvalidArgumentException('CPF inválido.');
+        }
+    }
+
+    public function getDocumentType(): DocumentType
+    {
+        return DocumentType::CPF;
+    }
+
+    public function getUnmaskedValue(): string
+    {
+        return preg_replace('/\D/', '', $this->document);
+    }
+
+    public function getMaskedValue(): string
+    {
+        return DocumentHelper::mask($this->document, '###.###.###-##');
+    }
+
+    public function getObfuscatedValue(): string
+    {
+        return DocumentHelper::obfuscate($this->document);
+    }
+}
