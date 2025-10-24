@@ -1,0 +1,49 @@
+# Composer
+/vendor/
+/composer.lock
+
+# Cache e logs
+/.idea/
+/.vscode/
+/nbproject/
+/*.log
+/.cache/
+/*.tmp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de build
+/build/
+/dist/
+/*.phar
+
+# Testes e cobertura
+/.phpunit.result.cache
+/.coverage/
+/coverage.xml
+
+# IDE/editor
+*.swp
+*.swo
+*.bak
+*.orig
+*.tmp
+
+# Arquivos gerados
+*.lock
+*.env
+.env.local
+.env.testing
+.env.*.local
+
+# PHP-CS-Fixer
+/.php-cs-fixer.cache
+.php-cs-fixer.cache
+
+# PHPStan
+/var/phpstan/
+phpstan.neon
+phpstan.neon.local
+phpstan-result.cache
