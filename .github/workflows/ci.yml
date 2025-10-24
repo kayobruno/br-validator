@@ -37,12 +37,4 @@ jobs:
 
       - name: 🧪 PHPUnit (com cobertura)
         run: |
-          vendor/bin/phpunit --coverage-text --colors=always --coverage-clover=coverage.xml
-
-      - name: 📊 Upload de cobertura para Codecov (opcional)
-        if: success() && matrix.php == '8.3'
-        uses: codecov/codecov-action@v4
-        with:
-          files: coverage.xml
-          fail_ci_if_error: true
-          token: ${{ secrets.CODECOV_TOKEN }}
+          vendor/bin/phpunit --coverage-text
