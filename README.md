@@ -27,9 +27,9 @@ use BrValidator\BrValidator;
 use BrValidator\Enums\DocumentType;
 use BrValidator\ValueObjects\CNPJValueObject;
 
-$isValid = BrValidator::isValid('12345678909', DocumentType::CPF); // true
+$isValid = BrValidator::isValid('251922606580000', DocumentType::CNS); // true
 $isValid = BrValidator::isValid('123.456.789-09', DocumentType::CPF); // true
-$isValid = BrValidator::isValid('11111111111', DocumentType::CPF); // false
+$isValid = BrValidator::isValid('11.222.333/0001-81', DocumentType::CNPJ); // true
 $isValid = BrValidator::isValid('CT.5O5.QVR/0001-30', DocumentType::CNPJ); // true
 
 // Value Objects
