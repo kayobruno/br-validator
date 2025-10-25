@@ -14,7 +14,7 @@ class CNPJValueObject implements DocumentValueObject
 {
     protected DocumentValidator $validator;
 
-    public function __construct(protected string $document)
+    public function __construct(protected readonly string $document)
     {
         $this->validator = new CNPJValidator();
 
